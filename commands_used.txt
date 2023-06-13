@@ -1,0 +1,28 @@
+
+#Install Laravel Application
+composer create-project laravel/laravel laravel-redis
+
+#Insatall packages
+composer require predis/predis
+
+#Create Controller,table
+php artisan make:model Blog -fmcr
+php artisan make:request BlogRequest
+
+
+#Download the Redis Server
+
+#For Ubuntu
+
+	URL: https://redis.io/docs/getting-started/
+	After installation run the commond redis-cli
+
+#For Windows
+
+	URL: https://github.com/microsoftarchive/redis/releases
+	download the msi extension (Redis-x64-3.0.504.msi) and install the application
+	After installation run the redis-cli.exe applicaion
+
+php artisan migrate --seed
+
+php artisan serve
